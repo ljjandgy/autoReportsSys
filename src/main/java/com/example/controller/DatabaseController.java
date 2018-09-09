@@ -1,6 +1,6 @@
 package com.example.controller;
 
-import com.mappper.UserMapper;
+import com.example.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
