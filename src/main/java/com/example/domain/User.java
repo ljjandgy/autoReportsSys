@@ -1,8 +1,11 @@
 package com.example.domain;
 
+import org.springframework.data.annotation.Id;
+
 public class User {
     private String name;
     private String remark;
+    @Id
     private String id;
 
     public String getName() {
@@ -27,5 +30,10 @@ public class User {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public User(String name, String remark) {
+        this.name = name;
+        this.remark = remark;
     }
 }
