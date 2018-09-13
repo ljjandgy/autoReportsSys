@@ -8,6 +8,10 @@ public class User {
     @Id
     private String id;
 
+    public User(String name, String remark) {
+        this.name = name;
+        this.remark = remark;
+    }
     public String getName() {
         return name;
     }
@@ -32,8 +36,5 @@ public class User {
         this.id = id;
     }
 
-    public User(String name, String remark) {
-        this.name = name;
-        this.remark = remark;
-    }
+
 }
