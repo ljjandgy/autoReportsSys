@@ -1,4 +1,41 @@
 com.name: \u5927\u53D4\u5927\u5A76
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/springone
+  datasource:
+    #驱动信息配置
+    url: jdbc:mysql://localhost:3306/springboottest?useUnicode=true&characterEncoding=utf-8
+    driverClassName: com.mysql.jdbc.Driver
+    username: root
+    password: ljj125896
+
+    #连接池信息配置
+    type: com.alibaba.druid.pool.DruidDataSource
+  druid:
+    #连接池初始数量
+    initialSize: 5
+    #最小数量
+    minIdle: 5
+    #最大数量
+    maxActive: 30
+    #最大等待时间（ms）
+    maxWait: 60000
+    #多长时间检测一次池里面的空闲连接，并关闭连接(关闭的前提是空闲时间大于timeBetweenEvictionRunsMillis的值-默认为30分钟)
+    timeBetweenEvictionRunsMillis: 60000
+    #申请连接时需要检测连接的空闲时间，如果大于上面属性配置的时间，则需要使用validationQuery对应sql判断连接是否有效
+    testWhileIdle: true
+    #用于检测连接是否有效的sql（配置的是mysql用的）
+    validationQuery: select 1
+    #空闲连接不被关闭的最长时间(ms)
+    minEvictableIdleTimeMillis: 2000000
+    #拦截器，其中wall用于防止sql注入
+    filters: stat,wall,log4j
+
 logging:
-  level: info
-  path: D:/soft/log4j/log
+  level:
+    com.example.mapper: debug
+mybatis:
+  configuration:
+    #对查询出来的字段自动进行驼峰转换
+    map-underscore-to-camel-case: true
