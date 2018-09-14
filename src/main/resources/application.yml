@@ -1,4 +1,5 @@
-com.name: \u5927\u53D4\u5927\u5A76
+com:
+  name: \u5927\u53D4\u5927\u5A76
 spring:
   data:
     mongodb:
@@ -9,10 +10,9 @@ spring:
     driverClassName: com.mysql.jdbc.Driver
     username: root
     password: ljj125896
-
+    data
     #连接池信息配置
     type: com.alibaba.druid.pool.DruidDataSource
-  druid:
     #连接池初始数量
     initialSize: 5
     #最小数量
