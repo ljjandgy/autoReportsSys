@@ -9,7 +9,7 @@
             </PatternLayout>
         </Console>
         <!--添加一个文本追加器，文件位于根目录下，名为log.log-->
-        <File name="File" fileName="log.log">
+        <File name="File" fileName="D:\logs\springBootLog.log">
             <PatternLayout>
                 <pattern>[%-5p] %d %c - %m%n</pattern>
             </PatternLayout>
@@ -25,6 +25,7 @@
         <!--根记录全部输出到控制台上-->
         <Root level="info">
             <AppenderRef ref="Console" />
+            <AppenderRef ref="File" />
         </Root>
     </Loggers>
 </Configuration>
