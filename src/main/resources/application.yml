@@ -10,7 +10,6 @@ spring:
     driverClassName: com.mysql.jdbc.Driver
     username: root
     password: ljj125896
-    data
     #连接池信息配置
     type: com.alibaba.druid.pool.DruidDataSource
     #连接池初始数量
@@ -31,10 +30,13 @@ spring:
     minEvictableIdleTimeMillis: 2000000
     #拦截器，其中wall用于防止sql注入
     filters: stat,wall,log4j
+    #在池中取出连接时是否检查连接是否失效
+    testOnBorrow: true
+    #把连接放回池中时是否检测可用
+    testOnReturn: false
 
-logging:
-  level:
-    com.example.mapper: debug
+
+
 mybatis:
   configuration:
     #对查询出来的字段自动进行驼峰转换
