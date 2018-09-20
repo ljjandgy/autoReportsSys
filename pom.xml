@@ -25,9 +25,17 @@
 	</properties>
 
 		<dependencies>
+			<!-- 启用spring的各类基本配置 -->
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter</artifactId>
+				<exclusions>
+					<!-- 排除自带的logback依赖 -->
+					<exclusion>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-starter-logging</artifactId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
@@ -65,6 +73,27 @@
 				<groupId>mysql</groupId>
 				<artifactId>mysql-connector-java</artifactId>
 			</dependency>
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>druid</artifactId>
+				<version>1.0.29</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-log4j2</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>1.2.16</version>
+				<scope>compile</scope>
+			</dependency>
+			<!-- 用于通过配置文件来集成druid -->
+			<!--<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>druid-spring-boot-starter</artifactId>
+				<version>1.1.0</version>
+			</dependency>-->
 		</dependencies>
 
 	<build>

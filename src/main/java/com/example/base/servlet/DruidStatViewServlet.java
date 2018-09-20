@@ -4,7 +4,7 @@ import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 import com.alibaba.druid.support.http.StatViewServlet;
 /**
- * druid数据源状态监控
+ * druid数据源状态监控（拦截器）
  */
 @WebServlet(urlPatterns="/druid/*",
 
