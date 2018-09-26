@@ -51,9 +51,29 @@ spring:
     #把连接放回池中时是否检测可用
     testOnReturn: false
 
+  redis:
+    #redis数据库索引
+    database: 0
+    #redis数据库主机ip
+    host: 192.168.85.129
+    #redis服务端口号
+    port: 6379
+    #redis服务连接密码
+    password:
+    jedis:
+      pool:
+        #最大连接数
+        max-active: 15
+        #最大等待时间(需要自己写单位)
+        max-wait: 10000ms
+        #最大空闲连接
+        max-idle: 8
+        #最小空闲连接
+        min-idle: 3
 
 
 mybatis:
   configuration:
     #对查询出来的字段自动进行驼峰转换
     map-underscore-to-camel-case: true
+
